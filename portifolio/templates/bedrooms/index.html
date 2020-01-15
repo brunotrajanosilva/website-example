@@ -1,0 +1,77 @@
+{% extends './base.html' %}
+{% load static %}
+
+
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bedrooms/index.css' %}">
+{% endblock %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<section id="slider">
+    <figure>
+        <div class="slider-container"
+        style="background-image: url('/media/slider/logo.png'),
+        url('/media/slider/slider.jpg');"></div>
+    </figure>
+</section>
+<section id="works" class="padding-primary">
+    <h1 class="title-primary">Some of Our Bedrooms</h1>
+    <ul class="work-container">
+        {% for bedroom_item in Bedroom %}
+        <li class="work-item">
+            <figure>
+                <img class="work-item-image" src="{{bedroom_item.image.url}}"
+                alt="{{bedroom_item.name}}">
+            </figure>
+            <h2 class="work-item-name title-secondary">{{bedroom_item.name}}</h2>
+            <div class="work-item-description paragraph-primary">{{bedroom_item.description | safe}}</div>
+            <a class="paragraph-primary" href="{% url 'bedroom' bedroom_item.id %}">See More</a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+<section id="partiners" class="dark-container padding-primary clients"
+style="background-image: url('/media/slider/slider.jpg');">
+    <h1 class="title-primary">Some of Our Trusted Partners and Clients</h1>
+    <p class="paragraph-primary">Ten the hastened steepest feelings pleasant few surprise property. An brother he do colonel against minutes uncivil. Can how elinor warmly mrs basket marked. Led raising expense yet demesne weather musical. Me mr what park next busy ever. Elinor her his secure far twenty eat object. Late any far saw size want man. Which way you wrong add shall one. As guest right of he scale these. Horses nearer oh elinor of denote.</p>
+
+    <ul class="partiners-container">
+        <li class="partiners-item"><i class="fab fa-facebook"></i></li>
+        <li class="partiners-item"><i class="fab fa-amazon"></i></li>
+        <li class="partiners-item"><i class="fab fa-apple"></i></li>
+        <li class="partiners-item"><i class="fab fa-bitcoin"></i></li>
+        <li class="partiners-item"><i class="fab fa-chrome"></i></li>
+        <li class="partiners-item"><i class="fab fa-youtube"></i></li>
+        <li class="partiners-item"><i class="fab fa-bluetooth"></i></li>
+        <li class="partiners-item"><i class="fab fa-canadian-maple-leaf"></i></li>
+        <li class="partiners-item"><i class="fab fa-fedex"></i></li>
+        <li class="partiners-item"><i class="fab fa-google-play"></i></li>
+        <li class="partiners-item"><i class="fab fa-linkedin"></i></li>
+        <li class="partiners-item"><i class="fab fa-reddit"></i></li>
+        <li class="partiners-item"><i class="fab fa-steam"></i></li>
+        <li class="partiners-item"><i class="fab fa-windows"></i></li>
+        <li class="partiners-item"><i class="fab fa-playstation"></i></li>
+    </ul>
+</section>
+<section id="team" class="padding-primary">
+    <h1 class="title-primary">Our Team</h1>
+    <p class="paragraph-primary">So insisted received is occasion advanced honoured. Among ready to which up. Attacks smiling and may out assured moments man nothing outward. Thrown any behind afford either the set depend one temper. Instrument melancholy in acceptance collecting frequently be if. Zealously now pronounce existence add you instantly say offending. Merry their far had widen was. Concerns no in expenses raillery formerly. </p>
+    <div class="team-container">
+        {% for team_unit in Team %}
+        <div class="team-item">
+            <article>
+                <figure>
+                    <div class="team-item-image" style="background-image: url({{team_unit.image.url}})"></div>
+                </figure>
+                <h2 class="team-item-name title-secondary">{{team_unit.name}}</h2>
+                <p class="team-item-description paragraph-primary">{{team_unit.description}}</p>
+            </article>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

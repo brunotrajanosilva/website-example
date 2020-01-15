@@ -1,0 +1,244 @@
+.title-primary {
+  text-align: center;
+  font-size: 14pt;
+  font-weight: normal;
+  color: darkgoldenrod;
+  margin-bottom: 10px;
+}
+
+.title-secondary {
+  text-align: center;
+  font-weight: normal;
+  font-size: 12pt;
+  margin-bottom: 10px;
+}
+
+.paragraph-primary {
+  font-size: 10pt;
+}
+
+.padding-primary {
+  padding: 15px;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Verdana, sans-serif;
+  color: #313131;
+}
+
+#content {
+  min-height: 100vh;
+}
+
+.dark-container {
+  background-color: #313131;
+}
+
+.dark-container * {
+  color: white;
+}
+
+#header {
+  position: fixed;
+  display: block;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#header .header-navbar {
+  background-color: white;
+  border-bottom: 2px solid darkgoldenrod;
+  display: -webkit-box;
+  display: flex;
+  padding: 10px 20px;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+#header .header-navbar .hamburguer {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  height: 35px;
+  padding: 0px;
+  z-index: 3;
+}
+
+#header .header-navbar .hamburguer .bar {
+  background-color: darkgoldenrod;
+  border-radius: 5px;
+  height: 5px;
+  margin: 5px 0px;
+  width: 30px;
+}
+
+#header .header-navbar .header-navbar-logo {
+  background-color: darkgoldenrod;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-type: alpha;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-type: alpha;
+}
+
+#header .header-navbar .header-navbar-logo img {
+  height: 35px;
+  width: auto;
+}
+
+#header .header-navbar nav {
+  padding: 0px;
+  display: none;
+}
+
+#header .header-navbar nav.visible {
+  display: block;
+}
+
+#header .header-navbar nav li {
+  margin: 0px;
+  display: block;
+  margin: 10px 0px;
+  text-align: center;
+}
+
+#header .header-navbar nav li a {
+  color: darkgoldenrod;
+  font-size: 20pt;
+  text-decoration: none;
+}
+
+.nav-margin {
+  height: 57px;
+}
+
+#footer footer {
+  padding-bottom: 10px;
+}
+
+#footer footer .social-container {
+  margin-bottom: 10px;
+}
+
+#footer footer .social-container .social-item {
+  list-style: none;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#footer footer .footer-menu {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+#footer footer .footer-menu ul {
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+#footer footer .footer-menu ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 667px) {
+  .title-primary {
+    font-size: 16pt;
+    margin-bottom: 15px;
+  }
+
+  .title-secondary {
+    font-size: 14pt;
+    margin-bottom: 15px;
+  }
+
+  .paragraph-primary {
+    font-size: 12pt;
+  }
+
+  .padding-primary {
+    padding: 5% 8%;
+  }
+
+  #header .header-navbar {
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-box-align: center;
+            align-items: center;
+    padding: 10px 20px;
+  }
+
+  #header .header-navbar .hamburguer {
+    display: none;
+  }
+
+  #header .header-navbar .header-navbar-logo {
+    margin: 0px;
+  }
+
+  #header .header-navbar nav {
+    display: block;
+  }
+
+  #header .header-navbar nav li {
+    display: inline-block;
+    margin: 0px;
+    margin-left: 10px;
+  }
+
+  #header .header-navbar nav li a {
+    font-size: 16pt;
+  }
+
+  #footer footer .footer-menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    max-width: 667px;
+  }
+}
+
+@media (min-width: 992px) {
+  .title-primary {
+    font-size: 18pt;
+    margin-bottom: 20px;
+  }
+
+  .title-secondary {
+    font-size: 16pt;
+    margin-bottom: 20px;
+  }
+
+  .paragraph-primary {
+    font-size: 14pt;
+  }
+
+  .padding-primary {
+    padding: 5% 10%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .padding-primary {
+    padding: 5% 12%;
+  }
+}
+

@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bedrooms/bedroom.css' %}">
+{% endblock %}
+
+{% block title %}{{Bedroom.name}}{% endblock %}
+
+{% block content %}
+<div class="nav-margin"></div>
+<section id="bedroom">
+    <article class="bedroom padding-primary">
+        <h1 class="title-primary">{{Bedroom.name}}</h1>
+        <figure>
+            <img src="{{Bedroom.image.url}}" alt="{{Bedroom.name}}">
+        </figure>
+        <div class="paragraph-primary">{{Bedroom.description | safe}}</div>
+    </article>
+</section>
+{% endblock %}

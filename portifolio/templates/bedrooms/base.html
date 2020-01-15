@@ -1,0 +1,96 @@
+{% load static %}
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'bedrooms/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header id="header">
+        <div class="header-navbar">
+            <div class="hamburguer" onclick="hamburguer()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="header-navbar-logo" style="mask-image: url('/media/slider/logo.png');
+            -webkit-mask-image: url('/media/slider/logo.png');">
+                <img src="/media/slider/logo.png" alt="" style="visibility: hidden">
+            </div>
+            <nav id="navbar">
+                <li><a href="{% url 'index' %}">HOME</a></li>
+                <li><a href="{% url 'bedrooms' %}">BEDROOMS</a></li>
+                <li><a href="">ABOUT</a></li>
+            </nav>
+        </div>
+    </header>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <section id="footer">
+        <footer class="padding-primary dark-container">
+            <div class="footer-menu">
+                <ul>
+                    <li class="paragraph-primary">BOOK</li>
+                    <li class="paragraph-primary">LEAP</li>
+                    <li class="paragraph-primary">CITY</li>
+                    <li class="paragraph-primary">ELETRONIC</li>
+                </ul>
+
+                <ul>
+                    <li class="paragraph-primary">BOOK</li>
+                    <li class="paragraph-primary">LEAP</li>
+                    <li class="paragraph-primary">CITY</li>
+                    <li class="paragraph-primary">ELETRONIC</li>
+                </ul>
+
+                <ul>
+                    <li class="paragraph-primary">BOOK</li>
+                    <li class="paragraph-primary">LEAP</li>
+                    <li class="paragraph-primary">CITY</li>
+                    <li class="paragraph-primary">ELETRONIC</li>
+                </ul>
+            </div>
+            <ul class="social-container">
+                <li class="social-item"><i class="fab fa-youtube"></i></li>
+                <li class="social-item"><i class="fab fa-facebook"></i></li>
+                <li class="social-item"><i class="fab fa-instagram"></i></li>
+                <li class="social-item"><i class="fab fa-twitter"></i></li>
+            </ul>
+            <p>Bedroom Group&trade; &copy; 2019 All Rights Reserved.</p>
+        </footer>
+    </section>
+</body>
+</html>
+<script>
+var hamburguer = function(){
+    var navbar = document.getElementById('navbar');
+    navbar.classList.toggle("visible");
+
+}
+
+var prevScrollpos = window.pageYOffset;
+
+window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("header").style.top = "0";
+    } else {
+        document.getElementById("header").style.top = "-57px";
+        var navbar = document.getElementById('navbar');
+        navbar.classList.remove("visible");
+    }
+
+    prevScrollpos = currentScrollPos;
+}
+
+</script>
+

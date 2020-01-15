@@ -1,0 +1,45 @@
+.work-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+}
+
+.work-container .work-item {
+  list-style: none;
+}
+
+.work-container .work-item .work-item-image {
+  width: 100%;
+}
+
+.work-container .work-item .work-item-description p:first-child {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.work-container .work-item .work-item-description p:not(:first-child) {
+  display: none;
+}
+
+.work-container .work-item a {
+  color: darkgoldenrod;
+  text-decoration: none;
+}
+
+#bedrooms .bedrooms-paragraph {
+  margin-bottom: 25px;
+}
+
+#bedrooms #pagination {
+  display: inline-block;
+  margin: auto;
+}
+
+#bedrooms #pagination .button-pagination {
+  margin-right: 15px;
+  font-size: xx-large;
+  text-decoration: none;
+}
+

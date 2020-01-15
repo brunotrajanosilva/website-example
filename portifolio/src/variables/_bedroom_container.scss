@@ -1,0 +1,42 @@
+@import "_variables";
+
+
+//works
+
+.work-container{
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(300px, 1fr) );
+    grid-gap: 10px;
+
+    .work-item{
+        //background-color: darkgray;
+        list-style: none;
+
+        .work-item-image{
+            width: 100%;
+            // background-position: center;
+            // background-size: cover;
+            // margin: auto;
+        }
+
+        .work-item-description{
+            //background-color: yellow;
+            
+            p:first-child{
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden; 
+            }
+            p:not(:first-child){
+                display: none;
+            }
+
+        }
+        
+        a{
+            color: $secondary-color;
+            text-decoration: none;
+        }
+    }
+}

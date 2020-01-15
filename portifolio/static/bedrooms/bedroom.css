@@ -1,0 +1,15 @@
+#bedroom article img {
+  height: auto;
+  width: 100%;
+  display: block;
+  margin: 0px auto 10px auto;
+}
+
+@media (min-width: 667px) {
+  #bedroom article img {
+    width: 70%;
+    max-width: 667px;
+    margin-bottom: 15px;
+  }
+}
+

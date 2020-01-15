@@ -1,0 +1,21 @@
+@import "variables/bedroom_container";
+
+
+#bedrooms{
+
+    .bedrooms-paragraph{
+        margin-bottom: $margin-xl;
+    }
+
+    #pagination{
+        display: inline-block;
+        margin: auto;
+    
+        .button-pagination{
+            margin-right: $margin-md;
+            font-size: xx-large;
+            text-decoration: none;
+        }
+    }
+
+}
