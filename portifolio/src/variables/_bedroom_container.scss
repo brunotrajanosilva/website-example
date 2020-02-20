@@ -5,23 +5,18 @@
 
 .work-container{
     display: grid;
-    grid-template-columns: repeat( auto-fill, minmax(300px, 1fr) );
+    //grid-template-columns: repeat( auto-fill, minmax(300px, 1fr) );
+    grid-template-columns: repeat( 1, 1fr);
     grid-gap: 10px;
 
     .work-item{
-        //background-color: darkgray;
         list-style: none;
 
         .work-item-image{
             width: 100%;
-            // background-position: center;
-            // background-size: cover;
-            // margin: auto;
         }
 
         .work-item-description{
-            //background-color: yellow;
-            
             p:first-child{
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
@@ -38,5 +33,18 @@
             color: $secondary-color;
             text-decoration: none;
         }
+    }
+}
+
+
+@media(min-width: $size-md){
+    .work-container{
+        grid-template-columns: repeat( 2, 1fr);
+    }
+}
+
+@media(min-width: $size-lg){
+    .work-container{
+        grid-template-columns: repeat( 4, 1fr);
     }
 }

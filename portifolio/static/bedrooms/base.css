@@ -218,17 +218,17 @@
 
 @media (min-width: 992px) {
   .title-primary {
-    font-size: 18pt;
-    margin-bottom: 20px;
-  }
-
-  .title-secondary {
     font-size: 16pt;
     margin-bottom: 20px;
   }
 
-  .paragraph-primary {
+  .title-secondary {
     font-size: 14pt;
+    margin-bottom: 20px;
+  }
+
+  .paragraph-primary {
+    font-size: 12pt;
   }
 
   .padding-primary {

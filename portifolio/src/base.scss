@@ -71,7 +71,6 @@ $header-font: 20pt;
             height: 35px;
             padding: 0px;
             z-index: 3;
-            //background-color: cadetblue;
 
             .bar{
                 background-color: $secondary-color;
@@ -94,7 +93,6 @@ $header-font: 20pt;
             -webkit-mask-position: center;
             -webkit-mask-repeat: no-repeat;
             -webkit-mask-type: alpha;
-            //margin-bottom: 30px;
 
             img{
                 height: 35px;
@@ -103,7 +101,6 @@ $header-font: 20pt;
         }
 
         nav{
-            //background-color: aqua;
             padding: 0px;
             display: none;
 
@@ -226,7 +223,7 @@ $header-font: 20pt;
 
 //lg
 @media(min-width: $size-lg){
-    $base-text-size: 14pt;
+    $base-text-size: 12pt;
 
     .title-primary{
         font-size: $base-text-size + 4pt;

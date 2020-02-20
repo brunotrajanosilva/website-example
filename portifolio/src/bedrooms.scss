@@ -8,12 +8,13 @@
     }
 
     #pagination{
-        display: inline-block;
-        margin: auto;
+        display: flex;
+        margin: $margin-xl;
+        justify-content: center;
     
         .button-pagination{
-            margin-right: $margin-md;
-            font-size: xx-large;
+            margin: 10px;
+            font-size: 30px;
             text-decoration: none;
         }
     }

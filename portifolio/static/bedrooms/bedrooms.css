@@ -1,6 +1,6 @@
 .work-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
 }
 
@@ -28,18 +28,33 @@
   text-decoration: none;
 }
 
+@media (min-width: 667px) {
+  .work-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .work-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 #bedrooms .bedrooms-paragraph {
   margin-bottom: 25px;
 }
 
 #bedrooms #pagination {
-  display: inline-block;
-  margin: auto;
+  display: -webkit-box;
+  display: flex;
+  margin: 25px;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 #bedrooms #pagination .button-pagination {
-  margin-right: 15px;
-  font-size: xx-large;
+  margin: 10px;
+  font-size: 30px;
   text-decoration: none;
 }
 

@@ -4,12 +4,6 @@ from .models import Bedroom, Team
 
 # Create your views here.
 
-# def IndexView(request):
-#     project_list = project.objects.all()[:3]
-#     team_list = team.objects.all()
-#     return render(request, 'portifolio/index.html',
-#     {'projects': project_list, 'team': team_list})
-
 
 
 class IndexView(ListView):
@@ -27,7 +21,7 @@ class IndexView(ListView):
 class BedroomsView(ListView):
     model = Bedroom
     template_name = "bedrooms/bedrooms.html"
-    paginate_by = 3
+    paginate_by = 4
 
 class BedroomDetail(DetailView):
     model = Bedroom

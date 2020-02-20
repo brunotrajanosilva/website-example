@@ -1,6 +1,6 @@
 .work-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
 }
 
@@ -26,6 +26,18 @@
 .work-container .work-item a {
   color: darkgoldenrod;
   text-decoration: none;
+}
+
+@media (min-width: 667px) {
+  .work-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .work-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 #slider,
