@@ -1,42 +1,34 @@
 {% extends './base.html' %}
 {% load static %}
+{% load responsive_images %}
+
 
 
 
 {% block head %}
-    <link rel="stylesheet" type="text/css" href="{% static 'bedrooms/index.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'bedrooms/index.css' %}">
+
+
 {% endblock %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
 
-<section id="slider">
-    <figure>
-        <div class="slider-container"
-        style="background-image: url('/media/slider/logo.png'),
-        url('/media/slider/slider.jpg');"></div>
-    </figure>
+<section>
+    <div class="banner">
+        <!-- <img src="{ srcset values.slider.src.url 1080x180 1280x512 1920x768 %}" class="banner-img" alt="{{values.slider.alt}}" /> -->
+        <img srcset="{% srcset values.banner.src 1080x1080 1280x512 1920x768 %}" class="banner-img" alt="{{values.banner.alt}}" />
+        <h2 class="banner-text title-primary padding-primary">Bedrooms for Rent.</h2>
+    </div>
 </section>
 <section id="works" class="padding-primary">
-    <h1 class="title-primary">Some of Our Bedrooms</h1>
-    <ul class="work-container">
-        {% for bedroom_item in Bedroom %}
-        <li class="work-item">
-            <figure>
-                <img class="work-item-image" src="{{bedroom_item.image.url}}"
-                alt="{{bedroom_item.name}}">
-            </figure>
-            <h2 class="work-item-name title-secondary">{{bedroom_item.name}}</h2>
-            <div class="work-item-description paragraph-primary">{{bedroom_item.description | safe}}</div>
-            <a class="paragraph-primary" href="{% url 'bedroom' bedroom_item.id %}">See More</a>
-        </li>
-        {% endfor %}
-    </ul>
+    <h2 class="title-primary">Some of Our Bedrooms</h2>
+    {% include './bedroom_container.html' with Bedrooms=values.bedrooms %}
 </section>
 <section id="partiners" class="dark-container padding-primary clients"
-style="background-image: url('/media/slider/slider.jpg');">
-    <h1 class="title-primary">Some of Our Trusted Partners and Clients</h1>
+style="background-image: url('{{values.partiners_img.src.url}}');">
+    <h2 class="title-primary">Some of Our Trusted Partners and Clients</h2>
     <p class="paragraph-primary">Ten the hastened steepest feelings pleasant few surprise property. An brother he do colonel against minutes uncivil. Can how elinor warmly mrs basket marked. Led raising expense yet demesne weather musical. Me mr what park next busy ever. Elinor her his secure far twenty eat object. Late any far saw size want man. Which way you wrong add shall one. As guest right of he scale these. Horses nearer oh elinor of denote.</p>
 
     <ul class="partiners-container">
@@ -58,10 +50,10 @@ style="background-image: url('/media/slider/slider.jpg');">
     </ul>
 </section>
 <section id="team" class="padding-primary">
-    <h1 class="title-primary">Our Team</h1>
+    <h2 class="title-primary">Our Team</h2>
     <p class="paragraph-primary">So insisted received is occasion advanced honoured. Among ready to which up. Attacks smiling and may out assured moments man nothing outward. Thrown any behind afford either the set depend one temper. Instrument melancholy in acceptance collecting frequently be if. Zealously now pronounce existence add you instantly say offending. Merry their far had widen was. Concerns no in expenses raillery formerly. </p>
     <div class="team-container">
-        {% for team_unit in Team %}
+        {% for team_unit in values.teams %}
         <div class="team-item">
             <article>
                 <figure>
@@ -74,4 +66,20 @@ style="background-image: url('/media/slider/slider.jpg');">
         {% endfor %}
     </div>
 </section>
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script><script>
+
+$(document).ready(function(){
+    $('.slider-banner').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+    });
+});
+
+
+</script> -->
 {% endblock %}

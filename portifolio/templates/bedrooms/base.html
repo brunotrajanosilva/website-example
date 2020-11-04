@@ -9,6 +9,8 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'bedrooms/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" integrity="sha512-D0B6cFS+efdzUE/4wh5XF5599DtW7Q1bZOjAYGBfC0Lg9WjcrqPXZto020btDyrlDUrfYKsmzFvgf/9AB8J0Jw==" crossorigin="anonymous" />
     {% block head %}{% endblock %}
 </head>
 <body>
@@ -19,13 +21,14 @@
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-            <div class="header-navbar-logo" style="mask-image: url('/media/slider/logo.png');
+            <i class="header-navbar-logo fab fa-d-and-d"></i>
+            <!-- <div class="header-navbar-logo" style="mask-image: url('/media/slider/logo.png');
             -webkit-mask-image: url('/media/slider/logo.png');">
                 <img src="/media/slider/logo.png" alt="navbar logo" style="visibility: hidden">
-            </div>
+            </div> -->
             <nav id="navbar">
-                <li><a href="{% url 'index' %}">HOME</a></li>
-                <li><a href="{% url 'bedrooms' %}">BEDROOMS</a></li>
+                <li><a  href="{% url 'index' %}">HOME</a></li>
+                <li><a  href="{% url 'bedrooms' %}">BEDROOMS</a></li>
                 <li><a href="">ABOUT</a></li>
             </nav>
         </div>
@@ -80,13 +83,13 @@ var prevScrollpos = window.pageYOffset;
 
 window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
+    var header = document.getElementById("header");
 
     if (prevScrollpos > currentScrollPos) {
-        document.getElementById("header").style.top = "0";
+        header.classList.remove("sticked");
+        // document.getElementById("header").style.top = "0";
     } else {
-        document.getElementById("header").style.top = "-57px";
-        var navbar = document.getElementById('navbar');
-        navbar.classList.remove("visible");
+        header.classList.add("sticked");
     }
 
     prevScrollpos = currentScrollPos;

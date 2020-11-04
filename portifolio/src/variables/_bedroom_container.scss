@@ -4,47 +4,98 @@
 //works
 
 .work-container{
-    display: grid;
-    //grid-template-columns: repeat( auto-fill, minmax(300px, 1fr) );
-    grid-template-columns: repeat( 1, 1fr);
-    grid-gap: 10px;
+    display: block;
+
 
     .work-item{
         list-style: none;
+        margin-bottom: 100px;
+        overflow: auto;
 
-        .work-item-image{
-            width: 100%;
-        }
+        .work-item-column{
+            
 
-        .work-item-description{
-            p:first-child{
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                overflow: hidden; 
-            }
-            p:not(:first-child){
-                display: none;
+            .work-item-image{
+                width: 100%;
+                margin-bottom: $margin-sm;
+                border-radius: 10px;
             }
 
-        }
+            .work-item-details{
+                
+                padding: 0px;
+    
+                .work-item-description{
+                    p:first-child{
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden; 
+                    }
+                    p:not(:first-child){
+                        display: none;
+                    }
         
-        a{
-            color: $secondary-color;
-            text-decoration: none;
+                }
+            }
+            
+            a{
+                color: $secondary-color;
+                text-decoration: none;
+            }
         }
+
+
     }
 }
 
 
 @media(min-width: $size-md){
-    .work-container{
-        grid-template-columns: repeat( 2, 1fr);
-    }
+
 }
 
 @media(min-width: $size-lg){
     .work-container{
-        grid-template-columns: repeat( 4, 1fr);
+
+        .work-item{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            align-items: center;
+            
+            &::after{
+                content: "";
+                clear: both;
+                display: table;
+            }
+    
+            .work-item-column{
+                // width: 50%;
+                // float: left;
+
+
+                .work-item-image{
+                    margin: 0px;
+                }
+
+
+                &.column-details{
+                    display: flex;
+                    align-items: center;
+                }
+
+            }
+        }
+    }
+}
+
+
+@media(min-width: $size-xl){
+    .work-container{
+        // grid-template-columns: repeat( 2, 1fr);
+
+        .work-item{
+            grid-gap: 50px;
+        }
     }
 }

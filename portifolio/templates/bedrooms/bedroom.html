@@ -1,21 +1,29 @@
 {% extends './base.html' %}
 {% load static %}
+{% load responsive_images %}
+
 
 {% block head %}
-    <link rel="stylesheet" type="text/css" href="{% static 'bedrooms/bedroom.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'bedrooms/bedroom.css' %}"> -->
 {% endblock %}
 
 {% block title %}{{Bedroom.name}}{% endblock %}
 
 {% block content %}
-<div class="nav-margin"></div>
+<section>
+    <div class="banner">
+        <img srcset="{% srcset Bedroom.bedroom_image.src 1080x1080 1280x512 1920x768 %}" class="banner-img" alt="{{Bedroom.bedroom_image.alt}}" />
+        <h2 class="banner-text title-primary padding-primary">{{Bedroom.name}}s</h2>
+    </div>
+</section>
+
 <section id="bedroom">
     <article class="bedroom padding-primary">
-        <h1 class="title-primary">{{Bedroom.name}}</h1>
-        <figure>
-            <img src="{{Bedroom.image.url}}" alt="{{Bedroom.name}} image">
-        </figure>
+        <h2 class="title-primary">{{Bedroom.name}}</h2>
         <div class="paragraph-primary">{{Bedroom.description | safe}}</div>
+
+        <div class="paragraph-primary secondary-color">Price: {{Bedroom.price}}</div>
+        <button class="button-primary">Rent Now</button>
     </article>
 </section>
 {% endblock %}

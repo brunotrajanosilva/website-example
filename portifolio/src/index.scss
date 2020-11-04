@@ -1,16 +1,6 @@
 @import "variables/_bedroom_container";
 
 
-#slider, .slider-container{
-    height: 400px;
-    background-color: #666666;
-    background-size: auto 50%, cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: normal, multiply, normal;
-}
-
-
 //partiners
 
 #partiners{
@@ -22,15 +12,23 @@
 
     .partiners-container{
         display: grid;
-        grid-template-columns: repeat( auto-fill, minmax(30px, 1fr) );
-        grid-gap: 10px;
+        grid-template-columns: repeat( auto-fill, minmax(60px, 1fr) );
+        grid-gap: 20px;
         margin-top: 50px;
 
         .partiners-item{
             list-style: none;
             width: 100%;
-            font-size: 16pt;
+            font-size: 32pt;
             text-align: center;
+
+            i{
+                color: $primary-color;
+
+                &:hover{
+                    color: $secondary-color;
+                }
+            }
         }
     }
 }
@@ -48,6 +46,10 @@
             list-style: none;
             display: block;
             margin-top: $margin-sm;
+
+            .team-item-name{
+                text-align: center;
+            }
 
             .team-item-image{
                 height: 100px;
@@ -68,9 +70,7 @@
 
 
 @media(min-width: $size-md){
-    #slider, .slider-container{
-        height: 45vw;
-    }
+
 
     #team{
         .team-container{
@@ -89,22 +89,10 @@
         }
     }
 
-    #partiners .partiners-container{
-        display: grid;
-        grid-template-columns: repeat( auto-fill, minmax(60px, 1fr) );
-        grid-gap: 20px;
-        margin-top: 50px;
-    
-        .partiners-item{
-            font-size: 32pt;
-        }
-    }
 }
 
 @media(min-width: $size-lg){
-    #slider, .slider-container{
-        height: 40vw;
-    }
+
 
     #partiners .partiners-container{
         display: grid;

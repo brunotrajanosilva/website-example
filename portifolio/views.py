@@ -1,22 +1,21 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
-from .models import Bedroom, Team
+from .models import Bedroom, Team, Image
 
 # Create your views here.
 
 
 
-class IndexView(ListView):
-    template_name = "bedrooms/index.html"
-    context_object_name = 'Bedroom'
+def IndexView(request):
+   
 
-    def get_queryset(self):
-        return Bedroom.objects.all()[:4]
+    bedrooms = Bedroom.objects.all()[:4]
+    banner_img = Image.objects.get(name="slider03")
+    partiners_img = Image.objects.get(name="partiners") 
+    teams = Team.objects.all()
+    values = {'bedrooms': bedrooms, 'banner': banner_img, 'partiners_img': partiners_img, 'teams': teams}
 
-    def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data(**kwargs)
-        context['Team'] = Team.objects.order_by('name')
-        return context
+    return render(request, 'bedrooms/index.html', {'values': values})
 
 class BedroomsView(ListView):
     model = Bedroom

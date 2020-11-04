@@ -5,11 +5,12 @@
   margin: 0px auto 10px auto;
 }
 
-@media (min-width: 667px) {
+@media (min-width: 640px) {
   #bedroom article img {
     width: 70%;
-    max-width: 667px;
-    margin-bottom: 15px;
+    max-width: 640px;
+    margin-bottom: 20px;
   }
 }
 
+/*# sourceMappingURL=bedroom.css.map */

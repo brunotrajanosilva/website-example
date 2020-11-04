@@ -1,60 +1,70 @@
 .work-container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
+  display: block;
 }
-
 .work-container .work-item {
   list-style: none;
+  margin-bottom: 100px;
+  overflow: auto;
 }
-
-.work-container .work-item .work-item-image {
+.work-container .work-item .work-item-column .work-item-image {
   width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
-
-.work-container .work-item .work-item-description p:first-child {
+.work-container .work-item .work-item-column .work-item-details {
+  padding: 0px;
+}
+.work-container .work-item .work-item-column .work-item-details .work-item-description p:first-child {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-.work-container .work-item .work-item-description p:not(:first-child) {
+.work-container .work-item .work-item-column .work-item-details .work-item-description p:not(:first-child) {
   display: none;
 }
-
-.work-container .work-item a {
+.work-container .work-item .work-item-column a {
   color: darkgoldenrod;
   text-decoration: none;
 }
 
-@media (min-width: 667px) {
-  .work-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (min-width: 992px) {
-  .work-container {
-    grid-template-columns: repeat(4, 1fr);
+  .work-container .work-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+  }
+  .work-container .work-item::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .work-container .work-item .work-item-column .work-item-image {
+    margin: 0px;
+  }
+  .work-container .work-item .work-item-column.column-details {
+    display: flex;
+    align-items: center;
   }
 }
-
+@media (min-width: 1280px) {
+  .work-container .work-item {
+    grid-gap: 50px;
+  }
+}
 #bedrooms .bedrooms-paragraph {
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
-
 #bedrooms #pagination {
-  display: -webkit-box;
   display: flex;
-  margin: 25px;
-  -webkit-box-pack: center;
-          justify-content: center;
+  margin: 50px;
+  justify-content: center;
 }
-
 #bedrooms #pagination .button-pagination {
   margin: 10px;
   font-size: 30px;
   text-decoration: none;
 }
 
+/*# sourceMappingURL=bedrooms.css.map */

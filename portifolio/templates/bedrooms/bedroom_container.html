@@ -1,0 +1,27 @@
+{% load responsive_images %}
+
+
+<ul class="work-container">
+{% for bedroom_item in Bedrooms %}
+<li class="work-item">
+    
+    <div class="work-item-column column-left">
+        <img srcset="{% srcset bedroom_item.bedroom_image.src 1080x810 600x450 %}" class="work-item-image" alt="{{bedroom_item.alt}}" />
+        <!-- <img class="work-item-image" src="bedroom_item.bedroom_image.src.url" alt="bedroom_item.name"> -->
+    </div>
+
+    <div class="work-item-column column-right">
+        <div class="work-item-details">
+            <h2 class="work-item-name title-secondary secondary-color">{{bedroom_item.name}}</h2>
+            <div class="work-item-price paragraph-primary secondary-color">Price: {{bedroom_item.price}}</div>
+            <div class="work-item-description paragraph-primary">{{bedroom_item.description | safe}}</div>
+            <a class="paragraph-primary" href="{% url 'bedroom' bedroom_item.id %}">
+                <button class="button-primary">
+                    See More
+                </button>
+            </a>
+        </div>
+    </div>
+</li>
+{% endfor %}
+</ul>

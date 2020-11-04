@@ -1,30 +1,52 @@
 
 @import "variables/_variables";
+@import "variables/bedroom_container";
 
-$base-text-size: 10pt;
+
 $header-font: 20pt;
 
 .title-primary{
     text-align: center;
-    font-size: $base-text-size + 4pt;
-    font-weight: normal;
+    font-size: $font-size-lg;
+    font-weight: 400;
     color: $secondary-color;
-    margin-bottom: $margin-sm;
+    margin-bottom: $margin-lg;
 }
 
 .title-secondary{
-    text-align: center;
     font-weight: normal;
-    font-size: $base-text-size + 2pt;
+    font-size: $font-size-md;
     margin-bottom: $margin-sm;
+
 }
 
 .paragraph-primary{
-    font-size: $base-text-size;
+    font-size: $font-size-sm;
+    line-height: 1.7;
+    margin-bottom: $margin-sm;
 }
 
 .padding-primary{
     padding: 15px;
+}
+
+.button-primary{
+    all: unset;
+    background-color: $secondary-color;
+    color: $primary-color;
+    font-size: $font-size-sm;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    position: relative;
+}
+
+.primary-color{
+    color: $primary-color;
+}
+
+.secondary-color{
+    color: $secondary-color;
 }
 
 
@@ -54,9 +76,16 @@ $header-font: 20pt;
     display: block;
     width: 100%;
     transition: all .3s;
+    z-index: 9;
+    top: 0px;
+
+    &.sticked{
+        top: -57px;
+
+    }
 
     .header-navbar{
-        background-color: white;
+        background-color: #fff;
         border-bottom: 2px solid $secondary-color;
         display: flex;
         padding: 10px 20px;
@@ -82,22 +111,19 @@ $header-font: 20pt;
         }
 
         .header-navbar-logo{
-            background-color: $secondary-color;
+            color: $secondary-color;
             
-            mask-size: contain;
-            mask-position: center;
-            mask-repeat: no-repeat;
-            mask-type: alpha;
+            // mask-size: contain;
+            // mask-position: center;
+            // mask-repeat: no-repeat;
+            // mask-type: alpha;
 
-            -webkit-mask-size: contain;
-            -webkit-mask-position: center;
-            -webkit-mask-repeat: no-repeat;
-            -webkit-mask-type: alpha;
+            // -webkit-mask-size: contain;
+            // -webkit-mask-position: center;
+            // -webkit-mask-repeat: no-repeat;
+            // -webkit-mask-type: alpha;
 
-            img{
-                height: 35px;
-                width: auto;
-            }        
+            font-size: 35px; 
         }
 
         nav{
@@ -122,6 +148,30 @@ $header-font: 20pt;
 
             }
         }
+    }
+}
+
+
+// banner
+.banner{
+    position: relative;
+    background-color: black;
+
+
+    .banner-img{
+        height: 100vw; //40vw;
+        width: 100%;
+        object-fit: cover;
+        opacity: .5;
+
+    }
+
+    .banner-text{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $primary-color;
+        width: auto;
     }
 }
 
@@ -162,25 +212,22 @@ $header-font: 20pt;
 //md
 @media(min-width: $size-md){
 
-    $base-text-size: 12pt;
     $header-font: 16pt;
 
     .title-primary{
-        font-size: $base-text-size + 4pt;
-        margin-bottom: $margin-md;
+        font-size: $font-size-xl;     
     }
 
     .title-secondary{
-        font-size: $base-text-size + 2pt;
-        margin-bottom: $margin-md;
+        font-size: $font-size-lg;     
     }
 
     .paragraph-primary{
-        font-size: $base-text-size;
+        font-size: $font-size-md;
     }
 
     .padding-primary{
-        padding: 5% 8%;
+        padding: 100px 200px;
     }
 
 
@@ -207,11 +254,27 @@ $header-font: 20pt;
                     margin: 0px;
                     margin-left: 10px;
                     a{
-                        font-size: $header-font;
+                        // font-size: $header-font;
                     }
                 }
             }
         }
+    }
+
+    .banner{
+
+        .banner-img{
+            height: 40vw;
+        }
+    }
+
+}
+
+
+//lg
+@media(min-width: $size-lg){
+    .padding-primary{
+        padding: 100px 200px;
     }
 
     #footer footer .footer-menu{
@@ -220,50 +283,22 @@ $header-font: 20pt;
     }
 }
 
-
-//lg
-@media(min-width: $size-lg){
-    $base-text-size: 12pt;
-
+//xl
+@media(min-width: $size-xl){
     .title-primary{
-        font-size: $base-text-size + 4pt;
-        margin-bottom: $margin-lg;
+        margin-bottom: $margin-xl;
     }
 
     .title-secondary{
-        font-size: $base-text-size + 2pt;
         margin-bottom: $margin-lg;
     }
 
     .paragraph-primary{
-        font-size: $base-text-size;
+        margin-bottom: $margin-lg;
     }
 
-    .padding-primary{
-        padding: 5% 10%;
-    }
-}
-
-//xl
-@media(min-width: $size-xl){
-
-    // $base-text-size: 16pt;
-
-    // .title-primary{
-    //     font-size: $base-text-size + 4pt;
-    //     margin-bottom: $margin-xl;
-    // }
-
-    // .title-secondary{
-    //     font-size: $base-text-size + 2pt;
-    //     margin-bottom: $margin-xl;
-    // }
-
-    // .paragraph-primary{
-    //     font-size: $base-text-size;
-    // }
 
     .padding-primary{
-        padding: 5% 12%;
+        padding: 100px 350px;
     }
 }
